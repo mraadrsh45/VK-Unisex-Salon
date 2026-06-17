@@ -47,10 +47,10 @@ export function AppProvider({ children }) {
         name: "Abhishek Bachchan",
         email: "abhishek@gmail.com",
         mobile: "+91 99999 88888",
-        service: "Royal Haircut & Sculpting",
+        service: "Hair Cut & Sculpting",
         date: "2026-06-18",
         time: "11:30 AM",
-        notes: "Requesting Vikram as stylist.",
+        notes: "Requesting Vishal as stylist.",
         timestamp: "2026-06-16T10:00:00.000Z",
         status: "Confirmed"
       },

@@ -6,7 +6,7 @@ import GlassCard from '../components/GlassCard';
 import SEO from '../utils/seo';
 
 export default function Services({ onOpenBooking }) {
-  const { services } = useApp();
+  const { services, contactInfo } = useApp();
   const [activeCategory, setActiveCategory] = useState('All');
 
   // Extract unique categories dynamically, prefixing with 'All'
@@ -132,17 +132,17 @@ export default function Services({ onOpenBooking }) {
           <span className="text-gold tracking-[0.2em] text-[10px] uppercase font-semibold">Special Request consultations</span>
           <h2 className="text-3xl font-playfair text-white mt-1 mb-4">Grooms & Bridal Artistry Packages</h2>
           <p className="text-gray-400 text-xs max-w-lg mx-auto leading-relaxed mb-8">
-            Looking for bespoke styling, private parlor reservations, or styling for wedding parties? Connect directly with our lead specialist Vikram for custom quotes.
+            Looking for bespoke styling, private parlor reservations, or styling for wedding parties? Connect directly with our lead specialist Vishal for custom quotes.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button
-              onClick={() => onOpenBooking('The Monarch Groom Experience')}
+              onClick={() => onOpenBooking('Full Body Massage')}
               className="gold-btn-gradient px-8 py-3 rounded-full text-xs font-semibold uppercase tracking-wider"
             >
               Book Consultation
             </button>
             <a
-              href="https://wa.me/+919876543210?text=Hi%2C%20I'd%20like%20to%20know%20more%20about%20custom%20wedding%20packages."
+              href={`https://wa.me/${contactInfo.whatsapp}?text=Hi%2C%20I'd%20like%20to%20know%20more%20about%20custom%20wedding%20packages.`}
               target="_blank"
               rel="noopener noreferrer"
               className="border border-white/10 hover:border-gold/30 hover:text-gold px-8 py-3 rounded-full text-xs font-semibold uppercase tracking-wider transition-colors duration-300"

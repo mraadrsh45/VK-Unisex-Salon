@@ -153,6 +153,22 @@ export default function BookingModal({ isOpen, onClose, preselectedService = '' 
                 <span className="text-gold uppercase text-xs tracking-widest font-semibold">Online Concierge</span>
                 <h3 className="text-3xl font-playfair text-white mt-1">Book Premium Appointment</h3>
                 <div className="w-16 h-[1px] bg-gold mx-auto mt-3"></div>
+                <p className="text-gray-400 text-xs mt-3 leading-relaxed max-w-md mx-auto">
+                  You can also book directly by calling us at{' '}
+                  <a href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`} className="text-gold hover:underline font-semibold">
+                    {contactInfo.phone}
+                  </a>{' '}
+                  or via{' '}
+                  <a
+                    href={`https://wa.me/${contactInfo.whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gold hover:underline font-semibold"
+                  >
+                    WhatsApp
+                  </a>. Alternatively, visit our salon at{' '}
+                  <span className="text-gold font-semibold">{contactInfo.address}</span>.
+                </p>
               </div>
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

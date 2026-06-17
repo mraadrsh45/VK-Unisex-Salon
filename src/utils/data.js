@@ -4,146 +4,336 @@ export const DEFAULT_CONTACT_INFO = {
   phone: "+91 98722 65250",
   whatsapp: "919872265250",
   email: "info@vksalon.com",
-  address: "St. No. 10, Tibba Rd, Prem Vihar, Ludhiana, Punjab - 141007",
-  mapsEmbedUrl: "https://maps.google.com/maps?q=st.%20No.%2010,%20Tibba%20Rd,%20Prem%20Vihar,%20Ludhiana,%20Punjab%20141007&t=&z=15&ie=UTF8&iwloc=&output=embed",
+  address: "#2139, St. No. 10, Prem Vihar, Tibba Road, Ludhiana, Punjab - 141007",
+  mapsEmbedUrl: "https://maps.google.com/maps?q=%232139;%20St.%20No.%2010,%20Prem%20Vihar,%20Tibba%20Road,%20Ludhiana,%20Punjab%20141007&t=&z=15&ie=UTF8&iwloc=&output=embed",
   streetViewEmbedUrl: "https://www.google.com/maps/embed?pb=!4v1689104052342!6m8!1m2!1sAF1QipN3X6z2yC_zL_qY2P_E7L9qZ!2d19.047022!3d72.827726!2f90!3f0!3m2!1i1024!2i768!4f35",
   rating: "4.9",
   reviewsCount: "1,248",
   businessHours: {
     weekdays: "09:00 AM - 09:00 PM",
-    saturday: "09:00 AM - 10:00 PM",
-    sunday: "10:00 AM - 08:00 PM",
+    saturday: "09:00 AM - 09:00 PM",
+    sunday: "09:00 AM - 09:00 PM",
   },
   googleBusinessUrl: "https://share.google/xY9zmaFH6chUUsSOO",
   mapsLink: "https://maps.app.goo.gl/YES3akEfjKqaqig29"
 };
 
 export const SERVICES = [
-  // Hair Cut
+  // Hair Cut / Hair Services
   {
     id: "hc-01",
     category: "Hair Cut",
-    name: "Royal Haircut & Sculpting",
-    price: 1200,
-    duration: "45 mins",
-    image: "/images/1.webp",
-    description: "Personalized premium haircut, complete hair wash with luxury conditioning, and a signature styling blow-dry.",
+    name: "Hair Cut & Sculpting",
+    price: 70,
+    duration: "25 mins",
+    image: "/images/2.webp",
+    description: "Sharp, clean haircut tailored to your preferences by our master stylists.",
     featured: true
   },
   {
     id: "hc-02",
     category: "Hair Cut",
-    name: "Classic Italian Cut",
-    price: 800,
-    duration: "30 mins",
-    image: "/images/2.webp",
-    description: "Sharp, timeless haircut tailored to your face structure by our master stylists.",
+    name: "Hair Dryer Styling",
+    price: 50,
+    duration: "10 mins",
+    image: "/images/1.webp",
+    description: "Professional blow-dry and quick styling to lock in your look.",
     featured: false
+  },
+  {
+    id: "hc-03",
+    category: "Hair Cut",
+    name: "Premium Hair Wash",
+    price: 50,
+    duration: "15 mins",
+    image: "/images/6.webp",
+    description: "Refreshing hair wash with premium clarifying and nourishing shampoos.",
+    featured: false
+  },
+  {
+    id: "hc-04",
+    category: "Hair Cut",
+    name: "Therapeutic Head Massage",
+    price: 100,
+    duration: "20 mins",
+    image: "/images/5.webp",
+    description: "Relaxing head massage with essential oils to relieve stress and improve scalp health.",
+    featured: true
   },
   // Beard Styling
   {
     id: "bs-01",
     category: "Beard Styling",
-    name: "Imperial Hot Towel Shave & Styling",
-    price: 700,
-    duration: "40 mins",
+    name: "Beard Shaving",
+    price: 50,
+    duration: "15 mins",
     image: "/images/4.webp",
-    description: "Classic straight-razor shave, hot steam towels, cooling essential oil massage, and precision beard grooming.",
+    description: "Classic smooth razor shave using fresh single-use blades and warm lather.",
     featured: true
   },
   {
     id: "bs-02",
     category: "Beard Styling",
-    name: "Beard Detailing & Line-up",
-    price: 450,
+    name: "Beard Cut & Detailing",
+    price: 50,
     duration: "20 mins",
     image: "/images/6.webp",
-    description: "Precision razor outlines and beard trimming with premium nourishing beard oils.",
+    description: "Precision beard cut and shape detailing tailored to your face structure.",
     featured: false
   },
-  // Hair Spa
+  {
+    id: "bs-03",
+    category: "Beard Styling",
+    name: "Beard Perming (Puming)",
+    price: 1000,
+    duration: "30 mins",
+    image: "/images/2.webp",
+    description: "Specialized texturizing treatment to shape and tame curly or wild beards.",
+    featured: false
+  },
+  // Hair Spa / Treatments
   {
     id: "hs-01",
     category: "Hair Spa",
-    name: "Keratin Fusion Reconstructive Spa",
-    price: 3500,
-    duration: "75 mins",
-    image: "/images/5.webp",
-    description: "Intense protein replenishment therapy that eliminates frizz, adds glass-like shine, and repairs structural hair damage.",
+    name: "Nourishing Hair Spa",
+    price: 500,
+    duration: "45 mins",
+    image: "/images/1.webp",
+    description: "Deep nourishing cream treatment and steam to revitalize damaged hair.",
     featured: true
   },
   {
     id: "hs-02",
     category: "Hair Spa",
-    name: "Moroccan Oil Hydrating Therapy",
-    price: 2500,
+    name: "Hair Perming (Puming)",
+    price: 1200,
     duration: "60 mins",
-    image: "/images/1.webp",
-    description: "Deep moisture treatment using authentic Argan oil to soften coarse hair and nourish the scalp.",
+    image: "/images/4.webp",
+    description: "Volume-boosting chemical texturizing treatment for styling and waves.",
     featured: false
   },
-  // Hair Coloring
+  {
+    id: "hs-03",
+    category: "Hair Spa",
+    name: "Hair Smoothing",
+    price: 1200,
+    duration: "90 mins",
+    image: "/images/6.webp",
+    description: "High-shine, long-lasting smoothing therapy to eliminate frizz.",
+    featured: true
+  },
+  {
+    id: "hs-04",
+    category: "Hair Spa",
+    name: "Hair Keratin Treatment",
+    price: 1200,
+    duration: "90 mins",
+    image: "/images/5.webp",
+    description: "Formaldehyde-free protein reconstruction to restore structural hair damage.",
+    featured: true
+  },
+  {
+    id: "hs-05",
+    category: "Hair Spa",
+    name: "Hair B-Tox Treatment",
+    price: 2000,
+    duration: "75 mins",
+    image: "/images/1.webp",
+    description: "Deep conditioning anti-aging treatment that reconstructs thin hair fibers.",
+    featured: false
+  },
+  {
+    id: "hs-06",
+    category: "Hair Spa",
+    name: "Nano Plastia Straightening",
+    price: 2500,
+    duration: "100 mins",
+    image: "/images/2.webp",
+    description: "Next-gen safe straightening and restructuring based on nanotechnology.",
+    featured: false
+  },
+  // Colour Services
   {
     id: "co-01",
     category: "Hair Coloring",
-    name: "Signature Balayage & Tonal Glaze",
-    price: 5500,
-    duration: "120 mins",
-    image: "/images/2.webp",
-    description: "Hand-painted, natural-looking highlights customized to your hair flow, finished with a high-shine glossing glaze.",
-    featured: true
+    name: "Beard Polish Color",
+    price: 50,
+    duration: "15 mins",
+    image: "/images/4.webp",
+    description: "Quick tint to add a natural, consistent color to your beard.",
+    featured: false
   },
   {
     id: "co-02",
     category: "Hair Coloring",
-    name: "Root Touch-up & Color Lock",
-    price: 1800,
-    duration: "60 mins",
-    image: "/images/4.webp",
-    description: "Flawless grey coverage using premium ammonia-free organic colors that respect your hair health.",
+    name: "Hair Gel Polish",
+    price: 100,
+    duration: "20 mins",
+    image: "/images/6.webp",
+    description: "Temporary glaze coating to enhance color vibrancy and shine.",
     featured: false
   },
-  // Facial
+  {
+    id: "co-03",
+    category: "Hair Coloring",
+    name: "Matrix Professional Colours",
+    price: 200,
+    duration: "45 mins",
+    image: "/images/2.webp",
+    description: "Premium global hair coloring using rich Matrix professional tones.",
+    featured: true
+  },
+  {
+    id: "co-04",
+    category: "Hair Coloring",
+    name: "Hair Blonde Shade",
+    price: 350,
+    duration: "60 mins",
+    image: "/images/1.webp",
+    description: "High-lift lightener shade to get standard blonde shades.",
+    featured: false
+  },
+  {
+    id: "co-05",
+    category: "Hair Coloring",
+    name: "Hair Blonde Cap Highlights",
+    price: 500,
+    duration: "75 mins",
+    image: "/images/5.webp",
+    description: "Cap highlighting technique to isolate strands and apply blonde tones.",
+    featured: false
+  },
+  // Face Services / Beauty Services
+  {
+    id: "fs-01",
+    category: "Beauty Services",
+    name: "Face Cleaning",
+    price: 100,
+    duration: "20 mins",
+    image: "/images/5.webp",
+    description: "Cleansing session that removes surface dust, oils, and makeup impurities.",
+    featured: false
+  },
+  {
+    id: "fs-02",
+    category: "Beauty Services",
+    name: "Face Scrub Exfoliation",
+    price: 200,
+    duration: "20 mins",
+    image: "/images/1.webp",
+    description: "Gentle exfoliating scrub to buff away dead skin cells and clear pores.",
+    featured: false
+  },
+  {
+    id: "fs-03",
+    category: "Beauty Services",
+    name: "Face D-Tan Treatment",
+    price: 200,
+    duration: "30 mins",
+    image: "/images/2.webp",
+    description: "Brightening formulation that minimizes sun tan and evens skin tone.",
+    featured: true
+  },
+  {
+    id: "fs-04",
+    category: "Beauty Services",
+    name: "Face Waxing",
+    price: 150,
+    duration: "15 mins",
+    image: "/images/4.webp",
+    description: "Smooth hair removal for facial skin using premium gentle wax.",
+    featured: false
+  },
+  {
+    id: "fs-05",
+    category: "Beauty Services",
+    name: "Bleach (Face & Neck)",
+    price: 200,
+    duration: "25 mins",
+    image: "/images/6.webp",
+    description: "Skin lightening bleach for a uniform skin appearance on face and neck.",
+    featured: false
+  },
+  {
+    id: "fs-06",
+    category: "Beauty Services",
+    name: "Full Body Bleach",
+    price: 1000,
+    duration: "60 mins",
+    image: "/images/1.webp",
+    description: "Detoxifying and tone-lightening bleach wrap for the entire body.",
+    featured: false
+  },
+  {
+    id: "fs-07",
+    category: "Beauty Services",
+    name: "Full Body Massage",
+    price: 1200,
+    duration: "60 mins",
+    image: "/images/5.webp",
+    description: "Therapeutic massage session to soothe muscle tension and eliminate stress.",
+    featured: true
+  },
+  // Facial Services
   {
     id: "fa-01",
     category: "Facial",
-    name: "24K Gold Luxury Illuminating Facial",
-    price: 4500,
-    duration: "90 mins",
-    image: "/images/5.webp",
-    description: "Anti-aging facial infused with real 24-karat gold dust, deep pore cleansing, vacuum exfoliation, and high-frequency lifting.",
+    name: "Diamond Facial",
+    price: 750,
+    duration: "45 mins",
+    image: "/images/2.webp",
+    description: "Exquisite diamond-dust infused facial for age control and polishing glow.",
     featured: true
   },
   {
     id: "fa-02",
     category: "Facial",
-    name: "Charcoal Detoxifying Deep Cleanse",
-    price: 2200,
-    duration: "50 mins",
-    image: "/images/6.webp",
-    description: "Ultrasonic blackhead extraction followed by an organic activated charcoal mask to pull out toxins and skin impurities.",
+    name: "Vitamin-C Facial",
+    price: 800,
+    duration: "45 mins",
+    image: "/images/4.webp",
+    description: "Brightening therapy rich in antioxidants to fade dark spots and hyperpigmentation.",
     featured: false
   },
-  // Groom Packages
   {
-    id: "gp-01",
-    category: "Groom Packages",
-    name: "The Monarch Groom Experience",
-    price: 8500,
-    duration: "180 mins",
+    id: "fa-03",
+    category: "Facial",
+    name: "Wello Cere Facial",
+    price: 1000,
+    duration: "50 mins",
+    image: "/images/6.webp",
+    description: "Hydrating protective therapy using advanced Wello Cere formulas.",
+    featured: false
+  },
+  {
+    id: "fa-04",
+    category: "Facial",
+    name: "Lotus Facial",
+    price: 1200,
+    duration: "60 mins",
     image: "/images/1.webp",
-    description: "Ultimate groom package including Royal Cut & Style, Imperial Beard Shave, Luxury Hair Spa, Gold Facial, and Hand/Foot Detailings.",
+    description: "Soothing natural herbal facial using organic Lotus extracts.",
+    featured: false
+  },
+  {
+    id: "fa-05",
+    category: "Facial",
+    name: "O3+ Facial",
+    price: 1500,
+    duration: "60 mins",
+    image: "/images/5.webp",
+    description: "Dermatologically approved oxygen-infused facial for maximum brightness.",
     featured: true
   },
-  // Bridal Makeup
+  // Bridal Makeup (Keep as requested in first prompt and for the route)
   {
     id: "bm-01",
     category: "Bridal Makeup",
-    name: "Royal HD Bridal Artistry & Styling",
-    price: 15000,
-    duration: "240 mins",
+    name: "Royal HD Bridal Artistry",
+    price: 5000,
+    duration: "180 mins",
     image: "/images/5.webp",
-    description: "Flawless high-definition makeup application, luxury hairstyling, saree draping, and jewelry setting by our senior artist.",
+    description: "Gorgeous high-definition makeup application, hairstyling, and drape setting.",
     featured: true
   }
 ];
@@ -151,33 +341,23 @@ export const SERVICES = [
 export const OFFERS = [
   {
     id: "of-01",
-    title: "Golden Hour Luxury Ritual",
-    description: "Enjoy a flat 20% discount on all premium Facials and Hair Spas. Valid between 11:00 AM and 04:00 PM (Monday to Thursday).",
-    code: "GOLDENHOUR",
-    discount: "20% OFF",
+    title: "Tuesday Massages Special Offer",
+    description: "Every 2nd Tuesday of the month, enjoy any body or head massage for only ₹399!",
+    code: "TUESMASSAGE",
+    discount: "₹399 ONLY",
     expiryDate: "2026-12-31",
     featured: true,
-    image: "/images/4.webp" // Added custom image
+    image: "/images/4.webp"
   },
   {
     id: "of-02",
-    title: "The Ultimate Groom Package Deal",
-    description: "Book the Monarch Groom package and get a free Premium Hair Coloring or a Moroccan Oil Spa treatment absolute free.",
-    code: "ROYALGROOM",
-    discount: "FREE SERVICE",
-    expiryDate: "2026-09-30",
+    title: "Tuesday Facials Special Offer",
+    description: "Every last Tuesday of the month, enjoy any facial treatment for only ₹699!",
+    code: "TUESFACIAL",
+    discount: "₹699 ONLY",
+    expiryDate: "2026-12-31",
     featured: true,
-    image: "/images/1.webp" // Added custom image
-  },
-  {
-    id: "of-03",
-    title: "Bridal Party Indulgence",
-    description: "Book bridal makeup for the bride and get 15% off on styling services for up to 4 family members.",
-    code: "BRIDEPARTY",
-    discount: "15% OFF",
-    expiryDate: "2026-11-15",
-    featured: false,
-    image: "/images/6.webp" // Added custom image
+    image: "/images/1.webp"
   }
 ];
 

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export default function SEO({ title, description, schema }) {
+export default function SEO({ title, description, keywords, schema }) {
   useEffect(() => {
     // 1. Update Document Title
     const baseTitle = 'VK Unisex Salon | Best Unisex Salon & Hair Salon in Ludhiana';
@@ -14,6 +14,16 @@ export default function SEO({ title, description, schema }) {
       document.head.appendChild(metaDescription);
     }
     metaDescription.content = description || "Experience the best unisex salon in Ludhiana. VK Unisex Salon offers luxury haircuts, hair spas, beard styling, facials, keratin treatments, and HD bridal makeup.";
+    
+    // Update Meta Keywords
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.name = 'keywords';
+      document.head.appendChild(metaKeywords);
+    }
+    const defaultKeywords = "VK Unisex Salon, best unisex salon in Ludhiana, top hair salon Tibba Road, best hair designer Vishal Kashyap, unisex salon Prem Vihar Ludhiana, luxury beauty parlour Ludhiana, haircut and styling near me Ludhiana, bridal makeup artist Ludhiana, keratin treatment salon Ludhiana, hair spa and coloring Tibba Road, premium salon Ludhiana";
+    metaKeywords.content = keywords || defaultKeywords;
     
     // 3. Update Canonical URL
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -75,7 +85,7 @@ export default function SEO({ title, description, schema }) {
         scriptToRemove.remove();
       }
     };
-  }, [title, description, schema]);
+  }, [title, description, keywords, schema]);
 
   return null;
 }

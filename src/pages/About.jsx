@@ -8,7 +8,7 @@ export default function About() {
     <div className="bg-charcoal-dark min-h-screen pt-28 pb-20">
       <SEO 
         title="About Us | Our Story & Expert Team" 
-        description="Learn about the vision behind VK Unisex Salon. Meet our founder Vikram K. and our certified skin and hair stylists." 
+        description="Learn about the vision behind VK Unisex Salon. Meet our founder Vishal Kashyap and our certified skin and hair stylists." 
       />
 
       {/* 1. Page Header */}
