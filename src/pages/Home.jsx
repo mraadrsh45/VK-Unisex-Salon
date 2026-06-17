@@ -6,11 +6,13 @@ import toast from 'react-hot-toast';
 import { useApp } from '../context/AppContext';
 import GlassCard from '../components/GlassCard';
 import SEO from '../utils/seo';
+import ReviewModal from '../components/ReviewModal';
 
 export default function Home({ onOpenBooking }) {
   const { services, offers, reviews, contactInfo } = useApp();
   const [activeBeforeAfter, setActiveBeforeAfter] = useState(0);
   const [openFaq, setOpenFaq] = useState(null);
+  const [isReviewOpen, setIsReviewOpen] = useState(false);
 
   // Filter out featured services and reviews
   const featuredServices = services.filter(s => s.featured).slice(0, 3);
@@ -424,14 +426,12 @@ export default function Home({ onOpenBooking }) {
           <div className="text-center">
             <span className="text-2xl font-semibold text-white font-playfair">{contactInfo.reviewsCount}+</span>
             <p className="text-xs text-gray-500 uppercase tracking-widest font-medium mt-2">Verified Reviews</p>
-            <a 
-              href={contactInfo.googleBusinessUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4 text-xs font-semibold text-gold border-b border-gold/30 hover:border-gold hover:text-gold-glow transition-all py-0.5"
+            <button 
+              onClick={() => setIsReviewOpen(true)}
+              className="inline-block mt-4 text-xs font-semibold text-gold border-b border-gold/30 hover:border-gold hover:text-gold-glow transition-all py-0.5 cursor-pointer bg-transparent border-0 outline-none"
             >
               Write a Review
-            </a>
+            </button>
           </div>
         </div>
 
@@ -580,6 +580,12 @@ export default function Home({ onOpenBooking }) {
           </GlassCard>
         </div>
       </section>
+
+      {/* Review Submission Modal */}
+      <ReviewModal 
+        isOpen={isReviewOpen} 
+        onClose={() => setIsReviewOpen(false)} 
+      />
     </div>
   );
 }
