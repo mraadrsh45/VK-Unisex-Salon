@@ -2,7 +2,7 @@
 
 A premium, luxury salon web application built to deliver an exquisite styling experience, seamless online ritual reservations, and a robust admin management console.
 
-🚀 **Live Site:** [https://vk-unisex-salon.vercel.app](https://vk-unisex-salon.vercel.app)
+🚀 **Live Site:** [https://vk-unisex-salon.vercel.app](https://vk-unisex-salon.vercel.app) 
 
 ---
 
