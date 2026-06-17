@@ -16,7 +16,7 @@ export default function Home({ onOpenBooking }) {
 
   // Filter out featured services and reviews
   const featuredServices = services.filter(s => s.featured).slice(0, 3);
-  const featuredReviews = reviews.filter(r => r.featured && r.approved).slice(0, 3);
+  const featuredReviews = reviews.filter(r => r.featured && r.approved).slice(0, 6);
   const activeOffers = offers.slice(0, 2);
 
   const beforeAfterData = [

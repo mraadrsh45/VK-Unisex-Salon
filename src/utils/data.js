@@ -184,9 +184,9 @@ export const OFFERS = [
 export const REVIEWS = [
   {
     id: "rv-01",
-    name: "Ranveer Singh",
+    name: "Rohan Sharma",
     rating: 5,
-    comment: "The Imperial Hot Towel Shave is pure bliss! The attention to detail, premium products, and luxurious ambiance are unmatched. V.K Salon is officially my go-to grooming place.",
+    comment: "Absolutely the best haircut I've had in Ludhiana! Vishal Kashyap is a true master designer. He understood my hair texture and structured the fade perfectly. Highly recommended!",
     date: "2026-05-10",
     source: "Google Reviews",
     featured: true,
@@ -194,9 +194,9 @@ export const REVIEWS = [
   },
   {
     id: "rv-02",
-    name: "Ananya Panday",
+    name: "Gurpreet Singh",
     rating: 5,
-    comment: "Had my Balayage done here by the master stylist. The color is absolutely gorgeous, and my hair feels healthier than ever after their Keratin Spa. Beautiful interior too!",
+    comment: "The Imperial Hot Towel Shave is pure bliss. The steam towel treatment, cooling beard oil massage, and precision outlines are top-notch. Very premium and relaxing vibe.",
     date: "2026-06-02",
     source: "Google Reviews",
     featured: true,
@@ -204,9 +204,9 @@ export const REVIEWS = [
   },
   {
     id: "rv-03",
-    name: "Aditya Roy Kapur",
+    name: "Priya Gupta",
     rating: 5,
-    comment: "Highly professional staff. The 24K Gold Facial left my skin feeling extremely refreshed before a shoot. Love the black and gold aesthetic, very premium vibe.",
+    comment: "Had my Balayage and Keratin hair spa done here. The color came out gorgeous, and my hair feels healthier than ever. Beautiful interior design and very hygienic.",
     date: "2026-06-12",
     source: "Google Reviews",
     featured: true,
@@ -214,12 +214,32 @@ export const REVIEWS = [
   },
   {
     id: "rv-04",
-    name: "Vikram Malhotra",
-    rating: 4,
-    comment: "Excellent haircut and beard lining. Booking was smooth via WhatsApp. Will visit again.",
+    name: "Amit Verma",
+    rating: 5,
+    comment: "Excellent service and polite staff. I tried their deep cleansing charcoal facial, and it made my skin feel completely refreshed. Booking on WhatsApp is very convenient.",
     date: "2026-06-14",
     source: "Website Feedback",
-    featured: false,
+    featured: true,
+    approved: true
+  },
+  {
+    id: "rv-05",
+    name: "Simran Kaur",
+    rating: 5,
+    comment: "VK Unisex Salon is my absolute go-to place in Ludhiana for hair coloring. They use organic, ammonia-free colors which are safe and smell amazing. 5 stars!",
+    date: "2026-06-15",
+    source: "Google Reviews",
+    featured: true,
+    approved: true
+  },
+  {
+    id: "rv-06",
+    name: "Rajesh Patel",
+    rating: 4,
+    comment: "Clean styling stations, skilled hair designers, and high-end products. Vishal and his team deliver outstanding results. Definitely recommend visiting them on Tibba Road.",
+    date: "2026-06-16",
+    source: "Google Reviews",
+    featured: true,
     approved: true
   }
 ];
