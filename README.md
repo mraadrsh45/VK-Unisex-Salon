@@ -55,8 +55,8 @@ OWNER_EMAIL=salon_owner_email@domain.com
 SENDER_EMAIL=onboarding@resend.dev  # Or your custom verified sending domain
 
 # Admin Panel Credentials
-ADMIN_USERNAME=servicesmaster12
-ADMIN_PASSWORD=Vksaloon@415263
+ADMIN_USERNAME=your_admin_username_here
+ADMIN_PASSWORD=your_admin_password_here
 ```
 
 ---

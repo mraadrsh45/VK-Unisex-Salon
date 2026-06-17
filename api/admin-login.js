@@ -21,8 +21,16 @@ export default function handler(req, res) {
   try {
     const { username, password } = req.body;
 
-    const ADMIN_USER = process.env.ADMIN_USERNAME || 'servicesmaster12';
-    const ADMIN_PASS = process.env.ADMIN_PASSWORD || 'Vksaloon@415263';
+    const ADMIN_USER = process.env.ADMIN_USERNAME;
+    const ADMIN_PASS = process.env.ADMIN_PASSWORD;
+
+    if (!ADMIN_USER || !ADMIN_PASS) {
+      console.error("ADMIN_USERNAME or ADMIN_PASSWORD environment variables are not set.");
+      return res.status(500).json({
+        success: false,
+        message: "Authentication service is not properly configured."
+      });
+    }
 
     if (username === ADMIN_USER && password === ADMIN_PASS) {
       // Create a mock token
