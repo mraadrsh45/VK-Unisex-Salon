@@ -329,7 +329,7 @@ export const BEFORE_AFTER = [
 ];
 
 export const STATISTICS = [
-  { id: "stat-01", number: "15+", label: "Years of Master Styling" },
+  { id: "stat-01", number: "Est. 2019", label: "Grooming Excellence" },
   { id: "stat-02", number: "12,000+", label: "Groomed Gentlemen & Brides" },
   { id: "stat-03", number: "4.9★", label: "Google Rated Business" },
   { id: "stat-04", number: "100%", label: "Certified Organic Products" }

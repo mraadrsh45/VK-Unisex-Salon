@@ -190,7 +190,7 @@ export default function Home({ onOpenBooking }) {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
-              { number: "15+", label: "Years of Master Styling" },
+              { number: "Est. 2019", label: "Grooming Excellence" },
               { number: "12,000+", label: "Happy Clients Served" },
               { number: "4.9 ★", label: "Google Business Rating" },
               { number: "100%", label: "Satisfaction Guaranteed" }
