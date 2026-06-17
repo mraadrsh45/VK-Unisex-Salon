@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
@@ -9,14 +8,14 @@ export default function Footer() {
 
   return (
     <footer className="bg-charcoal-dark border-t border-white/5 pt-20 pb-8 text-gray-400">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
         
         {/* Brand & Tagline */}
         <div className="flex flex-col gap-4">
           <Link to="/" className="text-3xl font-playfair font-bold text-gold tracking-widest">
-            V.K<span className="text-white font-light text-2xl ml-1">SALON</span>
+            VK<span className="text-white font-light text-xl ml-1">UNISEX SALON</span>
           </Link>
-          <p className="text-sm leading-relaxed text-gray-500 mt-2">
+          <p className="text-xs leading-relaxed text-gray-500 mt-2">
             Sculpting Confidence, Redefining Luxury. Experience premium grooming and beauty services delivered by international certified stylists.
           </p>
           <div className="flex items-center gap-3 mt-4">
@@ -37,12 +36,28 @@ export default function Footer() {
           <h3 className="text-white text-sm font-semibold tracking-widest uppercase mb-6 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-10 after:h-[1px] after:bg-gold">
             Navigation
           </h3>
-          <ul className="flex flex-col gap-3.5 text-sm">
+          <ul className="flex flex-col gap-3.5 text-xs uppercase tracking-wider font-montserrat">
             <li><Link to="/" className="hover:text-gold transition-colors duration-200">Home</Link></li>
-            <li><Link to="/services" className="hover:text-gold transition-colors duration-200">Services</Link></li>
+            <li><Link to="/services" className="hover:text-gold transition-colors duration-200">Services Menu</Link></li>
             <li><Link to="/gallery" className="hover:text-gold transition-colors duration-200">Media Gallery</Link></li>
-            <li><Link to="/tour" className="hover:text-gold transition-colors duration-200">360° Virtual Tour</Link></li>
-            <li><Link to="/about" className="hover:text-gold transition-colors duration-200">About the Salon</Link></li>
+            <li><Link to="/tour" className="hover:text-gold transition-colors duration-200">360° Tour</Link></li>
+            <li><Link to="/about" className="hover:text-gold transition-colors duration-200">About Us</Link></li>
+          </ul>
+        </div>
+
+        {/* Luxury Services */}
+        <div>
+          <h3 className="text-white text-sm font-semibold tracking-widest uppercase mb-6 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-10 after:h-[1px] after:bg-gold">
+            Services
+          </h3>
+          <ul className="flex flex-col gap-3.5 text-xs uppercase tracking-wider font-montserrat">
+            <li><Link to="/services/hair-cut" className="hover:text-gold transition-colors duration-200">Hair Cut</Link></li>
+            <li><Link to="/services/hair-spa" className="hover:text-gold transition-colors duration-200">Hair Spa</Link></li>
+            <li><Link to="/services/beard-styling" className="hover:text-gold transition-colors duration-200">Beard Styling</Link></li>
+            <li><Link to="/services/facials" className="hover:text-gold transition-colors duration-200">Facial Services</Link></li>
+            <li><Link to="/services/keratin-treatment" className="hover:text-gold transition-colors duration-200">Keratin</Link></li>
+            <li><Link to="/services/bridal-makeup" className="hover:text-gold transition-colors duration-200">Bridal Makeup</Link></li>
+            <li><Link to="/services/beauty-services" className="hover:text-gold transition-colors duration-200">Beauty & Color</Link></li>
           </ul>
         </div>
 
@@ -51,18 +66,18 @@ export default function Footer() {
           <h3 className="text-white text-sm font-semibold tracking-widest uppercase mb-6 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-10 after:h-[1px] after:bg-gold">
             Working Hours
           </h3>
-          <ul className="flex flex-col gap-3 text-sm text-gray-500">
+          <ul className="flex flex-col gap-3 text-xs text-gray-500">
             <li className="flex justify-between py-1 border-b border-white/5">
               <span className="text-gray-400 font-medium">Mon - Fri:</span>
-              <span className="text-gold">{contactInfo.businessHours.weekdays}</span>
+              <span className="text-gold font-mono">{contactInfo.businessHours.weekdays}</span>
             </li>
             <li className="flex justify-between py-1 border-b border-white/5">
               <span className="text-gray-400 font-medium">Saturday:</span>
-              <span className="text-gold">{contactInfo.businessHours.saturday}</span>
+              <span className="text-gold font-mono">{contactInfo.businessHours.saturday}</span>
             </li>
             <li className="flex justify-between py-1">
               <span className="text-gray-400 font-medium">Sunday:</span>
-              <span className="text-gold">{contactInfo.businessHours.sunday}</span>
+              <span className="text-gold font-mono">{contactInfo.businessHours.sunday}</span>
             </li>
           </ul>
         </div>
@@ -72,14 +87,14 @@ export default function Footer() {
           <h3 className="text-white text-sm font-semibold tracking-widest uppercase mb-6 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-10 after:h-[1px] after:bg-gold">
             Connect
           </h3>
-          <ul className="flex flex-col gap-4 text-sm">
+          <ul className="flex flex-col gap-4 text-xs">
             <li className="flex items-start gap-3">
               <FiMapPin className="text-gold mt-1 shrink-0" size={16} />
               <span>{contactInfo.address}</span>
             </li>
             <li className="flex items-center gap-3">
               <FiPhone className="text-gold shrink-0" size={16} />
-              <a href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`} className="hover:text-gold transition-colors duration-200">
+              <a href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`} className="hover:text-gold transition-colors duration-200 font-mono">
                 {contactInfo.phone}
               </a>
             </li>
@@ -96,7 +111,7 @@ export default function Footer() {
 
       {/* Footer Bottom */}
       <div className="max-w-7xl mx-auto px-6 border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
-        <p>© {new Date().getFullYear()} V.K Salon. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} VK Unisex Salon. All rights reserved.</p>
         <div className="flex items-center gap-4">
           <Link to="/tour" className="hover:text-gold transition-colors">Privacy Policy</Link>
           <span>•</span>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiPhone, FiLock } from 'react-icons/fi';
@@ -26,8 +26,10 @@ export default function Navbar({ onOpenBooking }) {
 
   // Close mobile menu on route change
   useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  }, [location, isOpen]);
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -38,6 +40,16 @@ export default function Navbar({ onOpenBooking }) {
     { name: 'Staff Portal', path: '/vk-admin-panel' },
   ];
 
+  const serviceSubLinks = [
+    { name: 'Hair Cut', path: '/services/hair-cut' },
+    { name: 'Hair Spa', path: '/services/hair-spa' },
+    { name: 'Beard Styling', path: '/services/beard-styling' },
+    { name: 'Facial Services', path: '/services/facials' },
+    { name: 'Keratin Treatment', path: '/services/keratin-treatment' },
+    { name: 'Bridal Makeup', path: '/services/bridal-makeup' },
+    { name: 'Beauty Services', path: '/services/beauty-services' },
+  ];
+
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-black/85 backdrop-blur-md py-4 border-b border-white/5' : 'bg-transparent py-6'}`}>
@@ -46,7 +58,7 @@ export default function Navbar({ onOpenBooking }) {
           {/* Logo Brand */}
           <Link to="/" className="flex items-center gap-2 group">
             <span className="text-2xl md:text-3xl font-playfair font-bold tracking-widest text-gold group-hover:text-gold-glow transition-all duration-300">
-              V.K<span className="text-white font-light text-xl md:text-2xl ml-1">SALON</span>
+              VK<span className="text-white font-light text-lg md:text-xl ml-1">UNISEX SALON</span>
             </span>
           </Link>
 
@@ -54,6 +66,34 @@ export default function Navbar({ onOpenBooking }) {
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
+              if (link.name === 'Services') {
+                return (
+                  <div key={link.name} className="relative group py-2">
+                    <Link
+                      to={link.path}
+                      className={`font-montserrat text-sm tracking-wider uppercase transition-colors duration-300 flex items-center gap-1 ${
+                        location.pathname.startsWith('/services') ? 'text-gold font-medium' : 'text-gray-300 hover:text-white'
+                      }`}
+                    >
+                      Services <span className="text-[10px] transform group-hover:rotate-180 transition-transform duration-200">▼</span>
+                    </Link>
+                    {/* Dropdown Menu */}
+                    <div className="absolute top-full left-0 mt-1 w-56 bg-black/95 border border-white/10 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                      <div className="py-2">
+                        {serviceSubLinks.map((subLink) => (
+                          <Link
+                            key={subLink.name}
+                            to={subLink.path}
+                            className="block px-4 py-2 text-xs font-montserrat tracking-wider uppercase text-gray-300 hover:text-gold hover:bg-white/5 transition-colors"
+                          >
+                            {subLink.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
               return (
                 <Link
                   key={link.name}
@@ -136,11 +176,36 @@ export default function Navbar({ onOpenBooking }) {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-lg lg:hidden flex flex-col pt-28 px-8 pb-10 justify-between"
+            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-lg lg:hidden flex flex-col pt-24 px-8 pb-10 justify-between overflow-y-auto"
           >
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4 overflow-y-auto max-h-[60vh] pr-2 scrollbar-thin">
               {navLinks.map((link) => {
                 const isActive = location.pathname === link.path;
+                if (link.name === 'Services') {
+                  return (
+                    <div key={link.name} className="flex flex-col gap-2">
+                      <Link
+                        to={link.path}
+                        className={`text-2xl font-playfair tracking-widest transition-colors ${isActive ? 'text-gold' : 'text-gray-400'}`}
+                      >
+                        {link.name}
+                      </Link>
+                      <div className="flex flex-col gap-2 pl-4 border-l border-gold/25 mt-1">
+                        {serviceSubLinks.map((subLink) => (
+                          <Link
+                            key={subLink.name}
+                            to={subLink.path}
+                            className={`text-sm font-montserrat tracking-wider uppercase ${
+                              location.pathname === subLink.path ? 'text-gold' : 'text-gray-500 hover:text-white'
+                            }`}
+                          >
+                            {subLink.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
                 return (
                   <Link
                     key={link.name}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vksalon.vercel.app/sitemap.xml

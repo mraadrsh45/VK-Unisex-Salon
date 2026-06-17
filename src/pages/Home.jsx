@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FiPhone, FiChevronRight, FiCheckCircle, FiCopy, FiMapPin, FiClock } from 'react-icons/fi';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiPhone, FiChevronRight, FiCheckCircle, FiCopy, FiMapPin, FiClock, FiChevronDown } from 'react-icons/fi';
 import { FaWhatsapp, FaStar } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 import { useApp } from '../context/AppContext';
@@ -10,6 +10,7 @@ import SEO from '../utils/seo';
 export default function Home({ onOpenBooking }) {
   const { services, offers, reviews, contactInfo } = useApp();
   const [activeBeforeAfter, setActiveBeforeAfter] = useState(0);
+  const [openFaq, setOpenFaq] = useState(null);
 
   // Filter out featured services and reviews
   const featuredServices = services.filter(s => s.featured).slice(0, 3);
@@ -39,8 +40,64 @@ export default function Home({ onOpenBooking }) {
   return (
     <div className="overflow-hidden bg-charcoal-dark">
       <SEO 
-        title="V.K Salon | Premium Luxury Salon Mumbai" 
-        description="Experience ultimate luxury grooming, hair spas, and bridal artistry. Book an online slot or reach out on WhatsApp." 
+        title="Best Unisex Salon & Hair Salon Near Me in Ludhiana" 
+        description="Experience luxury grooming at VK Unisex Salon, the best unisex salon in Ludhiana. Offering professional men's and women's haircuts, hair spas, facials, and bridal makeup on Tibba Road." 
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BeautySalon",
+              "@id": "https://vksalon.vercel.app/#salon",
+              "name": "VK Unisex Salon",
+              "url": "https://vksalon.vercel.app",
+              "telephone": "+919872265250",
+              "priceRange": "$$",
+              "image": "https://vksalon.vercel.app/logo.png",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "St. No. 10, Tibba Rd, Prem Vihar",
+                "addressLocality": "Ludhiana",
+                "addressRegion": "PB",
+                "postalCode": "141007",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 30.9256,
+                "longitude": 75.8945
+              }
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is the best unisex salon near me in Ludhiana?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "VK Unisex Salon is Ludhiana's premier luxury unisex salon located at Tibba Road, Prem Vihar. We offer celebrity-grade haircuts, organic hair spas, beard line-ups, advanced facials, and bridal makeup."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do you offer keratin treatments and hair smoothing in Prem Vihar?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! VK Unisex Salon specializes in formaldehyde-free Keratin Treatments and deep-nourishing Moroccan Oil hair spa therapies to restore damaged, frizzy hair."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I book an appointment for bridal makeup?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can book directly on our website, call our reception at +91 98722 65250, or message us on WhatsApp for pre-bridal consultation packages."
+                  }
+                }
+              ]
+            }
+          ]
+        }}
       />
 
       {/* 1. Full Screen Hero Section */}
@@ -70,7 +127,7 @@ export default function Home({ onOpenBooking }) {
             transition={{ duration: 0.8 }}
             className="text-gold tracking-[0.3em] text-xs md:text-sm uppercase font-semibold mb-4 bg-gold/10 px-4 py-1.5 rounded-full border border-gold/20 backdrop-blur-xs"
           >
-            Sculpting Confidence • Redefining Luxury
+            Ludhiana's Best Unisex Salon • Redefining Luxury
           </motion.span>
           
           <motion.h1
@@ -89,7 +146,7 @@ export default function Home({ onOpenBooking }) {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-gray-300 md:text-lg tracking-wide max-w-2xl font-light mb-10 leading-relaxed"
           >
-            Step into Bandra's most premium luxury saloon. Elevate your personal style with state-of-the-art haircuts, beard architecting, and therapeutic skin remedies.
+            Step into the best unisex hair salon near you in Ludhiana. Elevate your style with precision men's and women's haircuts, keratin hair spas, beard architecting, and rejuvenating skin remedies.
           </motion.p>
 
           {/* Interactive CTAs */}
@@ -161,8 +218,9 @@ export default function Home({ onOpenBooking }) {
               <div className="h-64 rounded-xl overflow-hidden mb-6 relative group">
                 <img 
                   src={svc.image} 
-                  alt={svc.name} 
+                  alt={`${svc.name} - Premium ${svc.category} at V.K Salon Ludhiana`} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                  loading="lazy"
                 />
                 <div className="absolute top-4 right-4 bg-black/80 text-gold text-xs px-3.5 py-1.5 rounded-full font-semibold border border-gold/20">
                   ₹{svc.price}
@@ -195,7 +253,7 @@ export default function Home({ onOpenBooking }) {
             <div className="w-16 h-[1.5px] bg-gold mb-10"></div>
             
             <p className="text-gray-400 text-sm leading-relaxed mb-10">
-              V.K Salon is more than a styling lounge—it is an escape from the ordinary. We believe grooming is a custom art form. Every razor stroke, blending cut, and facial mask is adjusted to match your individual preferences.
+              VK Unisex Salon is more than a styling lounge—it is an escape from the ordinary. We believe grooming is a custom art form. Every razor stroke, blending cut, and facial mask is adjusted to match your individual preferences.
             </p>
 
             <div className="space-y-6">
@@ -218,8 +276,9 @@ export default function Home({ onOpenBooking }) {
           <div className="relative h-[480px] rounded-2xl overflow-hidden border border-white/10 shadow-gold-sm">
             <img 
               src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop" 
-              alt="Salon Interior Lounge" 
+              alt="Luxury unisex salon interior lounge and styling stations at VK Unisex Salon Ludhiana" 
               className="w-full h-full object-cover" 
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             
@@ -270,8 +329,9 @@ export default function Home({ onOpenBooking }) {
             <div className="relative rounded-2xl overflow-hidden border border-white/5 group">
               <img 
                 src={beforeAfterData[activeBeforeAfter].before} 
-                alt="Before treatment styling" 
+                alt={`Before makeover - ${beforeAfterData[activeBeforeAfter].title} treatment at V.K Salon`} 
                 className="w-full h-[400px] object-cover group-hover:scale-102 transition-transform duration-500" 
+                loading="lazy"
               />
               <div className="absolute top-4 left-4 bg-black/85 border border-white/10 text-gray-400 text-xs px-3.5 py-1.5 rounded-full font-medium tracking-wider uppercase">
                 Before
@@ -281,8 +341,9 @@ export default function Home({ onOpenBooking }) {
             <div className="relative rounded-2xl overflow-hidden border border-gold/20 group">
               <img 
                 src={beforeAfterData[activeBeforeAfter].after} 
-                alt="After treatment styling" 
+                alt={`After makeover transformation - ${beforeAfterData[activeBeforeAfter].title} at V.K Salon Ludhiana`} 
                 className="w-full h-[400px] object-cover group-hover:scale-102 transition-transform duration-500" 
+                loading="lazy"
               />
               <div className="absolute top-4 left-4 bg-black/80 border border-gold/40 text-gold text-xs px-3.5 py-1.5 rounded-full font-semibold tracking-wider uppercase">
                 After
@@ -400,6 +461,74 @@ export default function Home({ onOpenBooking }) {
         </div>
       </section>
 
+      {/* 8. FAQ Section */}
+      <section className="py-28 max-w-4xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <span className="text-gold tracking-[0.2em] text-xs uppercase font-semibold">FAQ Helpdesk</span>
+          <h2 className="text-4xl md:text-5xl font-playfair text-white mt-2">Frequently Asked Questions</h2>
+          <div className="w-16 h-[1.5px] bg-gold mx-auto mt-4"></div>
+        </div>
+
+        <div className="space-y-4">
+          {[
+            {
+              question: "What makes VK Unisex Salon the best unisex salon in Ludhiana?",
+              answer: "VK Unisex Salon is Ludhiana's premier styling sanctuary located in Prem Vihar. We offer Vidal Sassoon trained stylists, ultra-premium global brands (Kérastase, Olaplex, Moroccanoil, MAC), and custom-tailored haircuts, hair spas, and beauty treatments in a luxurious private lounge."
+            },
+            {
+              question: "Do I need to book my appointment in advance?",
+              answer: "We highly recommend booking in advance, especially for weekends, to ensure you get your preferred stylist and time. You can easily book online or via our WhatsApp Concierge. Walk-ins are accepted based on availability."
+            },
+            {
+              question: "Which hair and skin brands do you use?",
+              answer: "We use only ultra-premium international brands including L'Oréal Professionnel, Kérastase, Olaplex, Moroccanoil, MAC, and organic gold-infused skin serums."
+            },
+            {
+              question: "Do you offer Keratin treatments and hair smoothing?",
+              answer: "Yes! VK Unisex Salon specializes in formaldehyde-free Keratin Treatments and deep-nourishing Moroccan Oil hair spa therapies to restore damaged, frizzy hair."
+            },
+            {
+              question: "Where is VK Unisex Salon located and is parking available?",
+              answer: "We are located at Street Number 10, Tibba Road, Prem Vihar, Ludhiana, Punjab - 141007. Yes, dedicated private parking is available for all salon guests."
+            }
+          ].map((faq, idx) => {
+            const isOpen = openFaq === idx;
+            return (
+              <div 
+                key={idx}
+                className="border border-white/5 bg-black/10 rounded-xl overflow-hidden transition-all duration-300"
+              >
+                <button
+                  onClick={() => setOpenFaq(isOpen ? null : idx)}
+                  className="w-full flex items-center justify-between p-5 text-left text-sm font-semibold text-white hover:text-gold transition-colors"
+                >
+                  <span>{faq.question}</span>
+                  <FiChevronDown 
+                    size={18} 
+                    className={`text-gold shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
+                  />
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25 }}
+                    >
+                      <div className="p-5 pt-0 border-t border-white/5 text-xs text-gray-400 leading-relaxed font-light">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
       {/* 8. Directions and Map Section */}
       <section className="relative h-[550px] border-t border-white/5">
         <div className="absolute inset-0 z-0">
@@ -418,7 +547,7 @@ export default function Home({ onOpenBooking }) {
         {/* Overlay Direction Card */}
         <div className="absolute left-6 md:left-24 top-1/2 -translate-y-1/2 z-10 w-full max-w-sm px-4">
           <GlassCard hoverGlow={false} className="p-8 border border-gold/20 shadow-gold-lg">
-            <span className="text-gold uppercase text-[10px] tracking-widest font-semibold block">V.K Salon Lounge</span>
+            <span className="text-gold uppercase text-[10px] tracking-widest font-semibold block">VK Unisex Salon Lounge</span>
             <h3 className="text-2xl font-playfair text-white mt-1 mb-4">Find Our Sanctuary</h3>
             
             <div className="space-y-4 text-xs text-gray-400 mb-8">

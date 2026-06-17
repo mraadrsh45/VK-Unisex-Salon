@@ -1,19 +1,14 @@
-import React from 'react';
-import { motion } from 'framer-motion';
 import { FiAward, FiCheckCircle } from 'react-icons/fi';
-import { useApp } from '../context/AppContext';
 import GlassCard from '../components/GlassCard';
 import { TEAM, AWARDS } from '../utils/data';
 import SEO from '../utils/seo';
 
 export default function About() {
-  const { contactInfo } = useApp();
-
   return (
     <div className="bg-charcoal-dark min-h-screen pt-28 pb-20">
       <SEO 
         title="About Us | Our Story & Expert Team" 
-        description="Learn about the vision behind V.K Salon. Meet our founder Vikram K. and our certified skin and hair stylists." 
+        description="Learn about the vision behind VK Unisex Salon. Meet our founder Vikram K. and our certified skin and hair stylists." 
       />
 
       {/* 1. Page Header */}
@@ -23,7 +18,7 @@ export default function About() {
           <h1 className="text-4xl md:text-6xl font-playfair font-bold text-white mt-3 mb-6">Our Sanctuary & Story</h1>
           <div className="w-16 h-[1.5px] bg-gold mx-auto mb-8"></div>
           <p className="text-gray-400 text-sm leading-relaxed font-light">
-            Founded with a vision to blend European creative haircut styling with warm, tailored guest hospitality, V.K Salon represents the height of luxury hair care and aesthetics.
+            Founded with a vision to blend European creative haircut styling with warm, tailored guest hospitality, VK Unisex Salon represents the height of luxury hair care and aesthetics.
           </p>
         </div>
       </section>
@@ -32,14 +27,14 @@ export default function About() {
       <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-28">
         <div className="lg:col-span-5 relative h-[520px] rounded-2xl overflow-hidden border border-white/10 shadow-gold-sm">
           <img 
-            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop" 
-            alt="Vikram K - Founder" 
-            className="w-full h-full object-cover object-top" 
+            src="/images/vishal.jpg" 
+            alt="Vishal Kashyap - Owner & Lead Hair Designer" 
+            className="w-full h-full object-cover object-center" 
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
           <div className="absolute bottom-6 left-6 right-6">
-            <span className="text-gold uppercase text-[10px] tracking-widest font-semibold block">Founder & Master Stylist</span>
-            <h3 className="text-2xl font-playfair text-white mt-1">Vikram K.</h3>
+            <span className="text-gold uppercase text-[10px] tracking-widest font-semibold block">Owner & Lead Hair Designer</span>
+            <h3 className="text-2xl font-playfair text-white mt-1">Vishal Kashyap</h3>
           </div>
         </div>
 
@@ -49,18 +44,18 @@ export default function About() {
           <div className="w-12 h-[1px] bg-gold"></div>
           
           <p className="text-gray-400 text-sm leading-relaxed">
-            Vikram K. spent over 15 years in Europe's fashion capitals, including Paris, London, and Milan, styling runway models and training with Vidal Sassoon's global styling academy. Upon returning to India, he identified a distinct gap: the need for an private, quiet, and hyper-premium styling sanctuary.
+            Vishal Kashyap possesses over 8 years of master hair design experience in creative haircutting, coloring, and styling. He founded VK Unisex Salon in Ludhiana to offer guests a premium, highly tailored personal grooming sanctuary with an emphasis on structure and detail.
           </p>
           <p className="text-gray-400 text-sm leading-relaxed">
-            V.K Salon was designed under Vikram's direct architectural oversight, featuring sound-absorbing acoustic ceiling grids, custom Italian styling chairs, and dimmable anti-glare mirrors to ensure your visits are completely stress-free and restorative.
+            VK Unisex Salon was built under Vishal's direct oversight to provide a relaxing, high-end environment. Featuring custom ergonomic styling chairs, color-balanced lighting, and premium styling equipment, every detail is engineered to deliver a perfect grooming ritual.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
             {[
-              "Certified Vidal Sassoon London Academy",
+              "Schwarzkopf Professional Academy Certified",
               "L'Oréal Professional Hair Color Master",
-              "styled over 100+ celebrity runway shoots",
-              "Exclusive premium organic hair care products"
+              "8+ Years of Master Hair Design Experience",
+              "Exclusive Premium Hair & Styling Care Brands"
             ].map((credential, idx) => (
               <div key={idx} className="flex items-center gap-3">
                 <FiCheckCircle className="text-gold shrink-0" size={16} />

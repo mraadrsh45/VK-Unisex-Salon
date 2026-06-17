@@ -227,11 +227,11 @@ export const REVIEWS = [
 export const TEAM = [
   {
     id: "tm-01",
-    name: "Vikram K.",
-    role: "Founder & Master Creative Stylist",
-    bio: "With over 15 years of training in Paris and Milan, Vikram founded V.K Salon to bring premium international hair styling techniques to Mumbai. He has styled top models and celebrities across the globe.",
-    image: "/images/vikram.jpg",
-    certifications: ["Vidal Sassoon London Certified", "L'Oréal Professionnel Color Master"]
+    name: "Vishal Kashyap",
+    role: "Owner & Lead Hair Designer",
+    bio: "With over 8 years of master styling experience, Vishal founded VK Unisex Salon to bring premium creative haircutting and modern styling to Ludhiana. He is passionate about customizing every cut to the guest's unique structure.",
+    image: "/images/vishal.jpg",
+    certifications: ["Schwarzkopf Professional Academy Certified", "L'Oréal Professionnel Color Master"]
   },
   {
     id: "tm-02",
